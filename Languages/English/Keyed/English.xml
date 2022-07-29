@@ -48,6 +48,12 @@
 	<CompositableLoadouts.Weight>Weight</CompositableLoadouts.Weight>
 	<CompositableLoadouts.WeightOverCapacity>The weight of gear carried by the pawn, vs the carry capacity of the pawn</CompositableLoadouts.WeightOverCapacity>
 	<CompositableLoadouts.HitPointsAmount>Hit points {0}</CompositableLoadouts.HitPointsAmount>
+	
+	<!-- Comabat Extended -->
+	<CompositableLoadouts.Mass>Mass</CompositableLoadouts.Mass>
+	<CompositableLoadouts.MassOverCapacity>The mass of gear carried by the pawn, vs the carry capacity of the pawn</CompositableLoadouts.MassOverCapacity>
+	<CompositableLoadouts.Bulk>Bulk</CompositableLoadouts.Bulk>
+	<CompositableLoadouts.BulkOverCapacity>The bulk of gear carried by the pawn, vs the carry capacity of the pawn</CompositableLoadouts.BulkOverCapacity>
 
 	<CompositableLoadouts.Customize>Customize</CompositableLoadouts.Customize>
 	<CompositableLoadouts.MouseOverDetails>(Mouse Over Numbers for Details)</CompositableLoadouts.MouseOverDetails>

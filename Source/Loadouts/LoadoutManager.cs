@@ -135,7 +135,7 @@ namespace Inventory {
         }
 
         public override void GameComponentOnGUI() {
-            if (InvKeyBindingDefOf.CL_OpenLoadoutEditor?.KeyDownEvent ?? false) {
+            if (Inventory_DefOf.CL_OpenLoadoutEditor?.KeyDownEvent ?? false) {
                 if (Find.WindowStack.WindowOfType<Dialog_LoadoutEditor>() == null) {
                     Pawn pawn = null;
 
@@ -156,7 +156,7 @@ namespace Inventory {
                 }
             }
 
-            if (InvKeyBindingDefOf.CL_OpenTagEditor?.KeyDownEvent ?? false) {
+            if (Inventory_DefOf.CL_OpenTagEditor?.KeyDownEvent ?? false) {
                 if (Find.WindowStack.WindowOfType<Dialog_TagEditor>() == null) {
                     Find.WindowStack.Add(new Dialog_TagEditor());
                 }

@@ -383,18 +383,50 @@ namespace Inventory {
 
             var loadoutItems = component.Loadout.ItemsWith(shownState).ToList();
 
-            GUIUtility.BarWithOverlay(
-                viewRect.PopTopPartPixels(UIC.SPACED_HEIGHT),
-                Utility.HypotheticalEncumberancePercent(pawn, loadoutItems),
-                Utility.HypotheticalUnboundedEncumberancePercent(pawn, loadoutItems) > 1f
-                    ? Textures.ValvetTex as Texture2D
-                    : Textures.RWPrimaryTex as Texture2D,
-                Strings.Weight,
-                Utility.HypotheticalGearAndInventoryMass(pawn, loadoutItems).ToString("0.#") + "/" +
-                Utility.HypotheticalCapacity(pawn, loadoutItems).ToStringMass(),
-                Strings.WeightOverCapacity);
+            if (ModLister.HasActiveModWithName("Combat Extended")) {
 
-            height += GenUI.GapTiny + UIC.SPACED_HEIGHT;
+                GUIUtility.BarWithOverlay(
+                    viewRect.PopTopPartPixels(UIC.SPACED_HEIGHT),
+                    Utility.HypotheticalEncumberancePercentCE(pawn, loadoutItems),
+                    Utility.HypotheticalUnboundedEncumberancePercentCE(pawn, loadoutItems) > 1f
+                        ? Textures.ValvetTex as Texture2D
+                        : Textures.RWPrimaryTex as Texture2D,
+                    Strings.Mass,
+                    Utility.HypotheticalGearAndInventoryMassCE(pawn, loadoutItems).ToString("0.#") + "/" +
+                    Utility.HypotheticalCapacityCE(pawn, loadoutItems).ToStringMass(),
+                    Strings.MassOverCapacity);
+
+                viewRect.AdjVertBy(GenUI.GapTiny);
+
+                GUIUtility.BarWithOverlay(
+                    viewRect.PopTopPartPixels(UIC.SPACED_HEIGHT),
+                    Utility.HypotheticalEncumberanceBulkPercent(pawn, loadoutItems),
+                    Utility.HypotheticalUnboundedEncumberanceBulkPercent(pawn, loadoutItems) > 1f
+                        ? Textures.ValvetTex as Texture2D
+                        : Textures.RWPrimaryTex as Texture2D,
+                    Strings.Bulk,
+                    Utility.HypotheticalGearAndInventoryBulk(pawn, loadoutItems).ToString("0.#") + "/" +
+                    Utility.HypotheticalBulkCapacity(pawn, loadoutItems),
+                    Strings.BulkOverCapacity);
+
+                height += 2 * (GenUI.GapTiny + UIC.SPACED_HEIGHT);
+            }
+			else
+			{
+                GUIUtility.BarWithOverlay(
+                    viewRect.PopTopPartPixels(UIC.SPACED_HEIGHT),
+                    Utility.HypotheticalEncumberancePercent(pawn, loadoutItems),
+                    Utility.HypotheticalUnboundedEncumberancePercent(pawn, loadoutItems) > 1f
+                        ? Textures.ValvetTex as Texture2D
+                        : Textures.RWPrimaryTex as Texture2D,
+                    Strings.Weight,
+                    Utility.HypotheticalGearAndInventoryMass(pawn, loadoutItems).ToString("0.#") + "/" +
+                    Utility.HypotheticalCapacity(pawn, loadoutItems).ToStringMass(),
+                    Strings.WeightOverCapacity);
+
+                height += GenUI.GapTiny + UIC.SPACED_HEIGHT;
+			}
+
 
             // var statBonuses = new Dictionary<StatDef, List<Item>>();
             // var wornApparel = component.Loadout.HypotheticalWornApparel(pawn.RaceProps.body).ToList();

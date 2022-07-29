@@ -71,7 +71,7 @@ namespace Inventory {
 
         private void DrawKeybinds(ref Rect rect) {
             
-            foreach (var keyBind in new List<KeyBindingDef> { InvKeyBindingDefOf.CL_OpenLoadoutEditor, InvKeyBindingDefOf.CL_OpenTagEditor }) {
+            foreach (var keyBind in new List<KeyBindingDef> { Inventory_DefOf.CL_OpenLoadoutEditor, Inventory_DefOf.CL_OpenTagEditor }) {
                 var keyCode = KeyPrefs.KeyPrefsData.GetBoundKeyCode(keyBind, KeyPrefs.BindingSlot.A);
                 void SetBinding(KeyCode code) {
                     KeyPrefs.KeyPrefsData.SetBinding(keyBind, KeyPrefs.BindingSlot.A, code);

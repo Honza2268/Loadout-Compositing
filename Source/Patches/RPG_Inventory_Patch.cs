@@ -16,6 +16,7 @@ namespace Inventory {
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions) {
             var insts = instructions.ToList();
             var insertMeth = AccessTools.Method("Sandy_Detailed_RPG_Inventory.Sandy_Detailed_RPG_GearTab:DrawInventory");
+            //var insertMeth = AccessTools.Method("Sandy_Detailed_RPG_Inventory.Sandy_Detailed_RPG_GearTab:DrawEquipments");
 
             int count = 0;
             for (int i = 0; i < insts.Count; i++) {

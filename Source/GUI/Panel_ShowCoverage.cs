@@ -131,7 +131,8 @@ namespace Inventory {
             }
 
             var numCols = layers.Count + 1;
-            var width = Mathf.Max(longestName, rect.width / numCols);
+            var width = rect.width / numCols;
+            var labelWidth = Mathf.Max(longestName, rect.width / numCols);
             var curX = rect.x;
 
             Text.Anchor = TextAnchor.MiddleCenter;

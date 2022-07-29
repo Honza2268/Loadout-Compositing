@@ -41,7 +41,7 @@
 	</loadAfter>
 
 	<incompatibleWith>
-		<li>CETeam.CombatExtended</li>
+		<!--<li>CETeam.CombatExtended</li>-->
 		<li>NotooShabby.AwesomeInventoryForked</li>		
 	</incompatibleWith>
 

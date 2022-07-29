@@ -57,6 +57,12 @@ namespace Inventory {
         public static string Weight => $"{P}Weight".TranslateSimple();
         public static string WeightOverCapacity => $"{P}WeightOverCapacity".TranslateSimple();
 
+        // comat Extened
+        public static string Mass => $"{P}Mass".TranslateSimple();
+        public static string MassOverCapacity => $"{P}MassOverCapacity".TranslateSimple();
+        public static string Bulk => $"{P}Bulk".TranslateSimple();
+        public static string BulkOverCapacity => $"{P}BulkOverCapacity".TranslateSimple();
+
         // intentionally not translated
         public static string HitPointsAmount => $"{P}HitPointsAmount";
         public static string ToCopy => $"{P}ToCopy".TranslateSimple();
